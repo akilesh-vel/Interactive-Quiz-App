@@ -1,0 +1,163 @@
+.link{
+  text-align:center;
+  color:#2563eb;
+  cursor:pointer;
+  margin-top:10px;
+  font-size:14px;
+}
+
+.link:hover{
+  text-decoration:underline;
+}
+
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  background:linear-gradient(135deg,#eef2ff,#f8fafc);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.hidden{ display:none; }
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  width:420px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+.card.wide{ width:720px; }
+
+input, select, textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:6px;
+  border:1px solid #d1d5db;
+}
+
+button{
+  padding:12px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+button:hover{
+  background:#1e40af;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+}
+
+#options button{
+  width:100%;
+  margin:8px 0;
+  background:#e5e7eb;
+  color:#111827;
+  transition:all .3s ease;
+}
+
+#options button:hover{
+  background:#2563eb;
+  color:white;
+  transform:scale(1.02);
+}
+
+.selected{
+  background:#16a34a !important;
+  color:white !important;
+}
+#strength{
+  font-size:13px;
+  margin-top:5px;
+}
+.weak{color:red}
+.medium{color:orange}
+.strong{color:green}
+
+.dark{
+  background:#0f172a;
+  color:white;
+}
+
+.dark .card{
+  background:#020617;
+  color:white;
+}
+#themeToggle{
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1100;
+
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+#themeToggle:hover{
+  transform: scale(1.1);
+  background: #1e40af;
+}
+
+#statusPanel{
+  position: fixed;
+  top: 70px;   
+  left: 15px;
+  background: rgba(255,255,255,0.97);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #111827;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.dark #statusPanel{
+  background: rgba(2,6,23,0.95);
+  color: #e5e7eb;
+}
+
+.dark #themeToggle{
+  background: #facc15;
+  color: #020617;
+}
+
+#doubtBtn{
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#doubtBtn.active{
+  color: #f97316; 
+  font-weight: bold;
+}
+

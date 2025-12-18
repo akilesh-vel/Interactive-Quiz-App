@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skill Assessment Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button id="themeToggle" onclick="toggleTheme()">🌙</button>
+
+<section id="authPage" class="card">
+  <h2>Sign In</h2>
+
+  <label for="authName">Username</label>
+  <input id="authName" placeholder="Enter username">
+
+  <label for="authPassword">Password</label>
+  <input id="authPassword" type="password" placeholder="Enter password">
+
+  <label for="authRole">Role</label>
+  <select id="authRole">
+    <option value="">Select role</option>
+    <option>Student</option>
+    <option>Employee</option>
+    <option>Admin</option>
+  </select>
+
+  <button onclick="signIn()">Sign In</button>
+
+  <p class="link" onclick="showSignUp()">Create account</p>
+  <p class="link" onclick="showForgot()">Forgot password?</p>
+</section>
+
+<section id="signupPage" class="card hidden">
+  <h2>Sign Up</h2>
+
+  <label for="suName">Username</label>
+  <input id="suName" placeholder="Choose username">
+
+  <label for="suPassword">Password</label>
+  <input id="suPassword" type="password" placeholder="Create password">
+  <div id="strength"></div>
+
+  <label for="suRole">Role</label>
+  <select id="suRole">
+    <option>Student</option>
+    <option>Employee</option>
+    <option>Admin</option>
+  </select>
+
+  <button onclick="signUp()">Register</button>
+  <p class="link" onclick="backToSignIn()">Back to Sign In</p>
+</section>
+
+<section id="forgotPage" class="card hidden">
+  <h2>Forgot Password</h2>
+
+  <label for="fpName">Username</label>
+  <input id="fpName" placeholder="Enter username">
+
+  <label for="fpPassword">New Password</label>
+  <input id="fpPassword" type="password" placeholder="New password">
+
+  <label for="otpInput">OTP</label>
+  <input id="otpInput" placeholder="Enter OTP">
+
+  <button onclick="resetPassword()">Reset Password</button>
+  <p class="link" onclick="backToSignIn()">Back to Sign In</p>
+</section>
+
+ <div id="statusPanel">
+  <p>Attempted: <span id="attCount">0</span></p>
+  <p>Not Attempted: <span id="notAttCount">30</span></p>
+  <p>Viewed: <span id="viewCount">0</span></p>
+  <p>Not Viewed: <span id="notViewCount">30</span></p>
+  <p>Doubt: <span id="doubtCount">0</span></p>
+</div>
+<button id="doubtBtn" onclick="toggleDoubt()">❓ Doubt</button>
+<section id="quizPage" class="card hidden">
+  <div class="topBar">
+    <span id="qInfo"></span>
+    <span id="timeEl"></span>
+  </div>
+
+  <h3 id="question"></h3>
+  <div id="options"></div>
+
+  <div class="navBtns">
+    <button onclick="prevQ()">Previous</button>
+    <button onclick="nextQ()">Next</button>
+    <button onclick="confirmSubmit()">Submit</button>
+  </div>
+</section>
+
+<section id="resultPage" class="card hidden">
+  <h2>Result Analysis</h2>
+  <div id="resultBox"></div>
+  <button onclick="show('feedbackPage')">Give Feedback</button>
+</section>
+
+<section id="feedbackPage" class="card hidden">
+  <h2>Feedback</h2>
+  <textarea id="feedback" placeholder="Your feedback"></textarea>
+  <button onclick="alert('Thank you for feedback!')">Submit</button>
+</section>
+
+<section id="adminPage" class="card hidden">
+  <h2>Admin Dashboard</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Role</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody id="adminTable"></tbody>
+  </table>
+
+  <button onclick="downloadReport()">Download Report</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
